@@ -1,7 +1,7 @@
 # keep the nginx.conf (configaration file in congig map and mouunt it as volume to the pod to reduce the rebuild the image)
 kind: ConfigMap
 apiVersion: v1
-metedata:
+metadata:
   namespace: roboshop
   name: nginxconfig
 data:
