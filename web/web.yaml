@@ -168,6 +168,6 @@ spec:
     project: roboshop
   ports:
   - name: http-port
-    protocol: TCp
+    protocol: TCP
     port: 80
     targetPort: 80
