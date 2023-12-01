@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployement
-metedata:
+metadata:
   namespace: roboshop
   name: catalogue
   labels: 
@@ -15,7 +15,7 @@ spec:
       service: catalogue
       project: roboshop
   template:
-    metedata:
+    metadata:
       labels:
         tier: app
         service: catalogue
@@ -28,7 +28,7 @@ spec:
 ---
 kind: Service
 apiVersion: v1
-metedata:
+metadata:
   namespace: roboshop
   name: catalogue
 spec:
