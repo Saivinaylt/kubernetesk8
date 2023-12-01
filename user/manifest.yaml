@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Deployement
+metedata:
+  name: user
+  labels: 
+    service: user
+    tier: app
+    project: roboshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: user
+      tier: app
+      project: roboshop
+  template:
+    metedata:
+      labels:
+        service: user
+        tier: app
+        project: roboshop
+    spec:
+      containers: 
+      - image: saivinaylt/user:v1
+        imagePullPolicy: Always
+        name: user
+---
+kind: Service
+apiVersion: v1
+metedata:
+  name: user
+  labels:
+    service: user
+    tier: app
+    project: roboshop
+spec:
+  slector:
+    service: user
+    tier: app
+    project: roboshop
+  ports:
+  - name: user-port
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+

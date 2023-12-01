@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployement
+metedata:
+  name: cart
+  labels:
+    tier: app
+    project: roboshop
+    service: cart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: app
+      project: roboshop
+      service: cart
+  template:
+    metedata:
+      labels:
+        tier: app
+        project: roboshop
+        service: cart
+    spec:
+      containers:
+      - image: saivinaylt/cart:v1
+        imagePullPolicy: Always
+        name: cart
+---
+kind: Service
+apiVersion: v1
+metedata:
+  name: cart
+  labels:
+    tier: app
+    project: roboshop
+    service: cart
+spec:
+  selector:
+    tier: app
+    project: roboshop
+    service: cart
+  ports:
+  - name: cart-port
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+
+
+

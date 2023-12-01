@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployement
+metedata:
+  name: catalogue
+  labels: 
+    tier: app
+    service: catalogue
+    project: roboshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: app
+      service: catalogue
+      project: roboshop
+  template:
+    metedata:
+      labels:
+        tier: app
+        service: catalogue
+        project: roboshop
+    spec:
+      containers:
+      - image: saivinaylt/catalogue:v1
+        imagePullPolicy: Always
+        name: catalogue
+---
+kind: Service
+apiVersion: v1
+metedata:
+  name: catalogue
+spec:
+  selector:
+    tier: app
+    service: catalogue
+    project: roboshop
+  ports:
+  - name: catalogue-port
+    protocol: TCP
+    port: 8080
+    targetPort: 8080          
+
+        
+
+
+
+    

@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployement
+metedata:
+  name: payment
+  labels:
+    tier: app
+    service: payment
+    project: roboshop
+spec:
+  replicas: 1
+  seletor:
+    matchLabels:
+      tier: app
+      service: payment
+      project: roboshop
+  template:
+    metedata:
+      labels: 
+        tier: app
+        service: payment
+        project: roboshop
+    spec:
+      containers: 
+      - image: saivinaylt/payment:v1
+        imagePullPolicy: Always
+        name: payment
+---
+kind: Service
+apiVersion: v1
+metedata:
+  name: payment
+  labels:
+    tier: app
+    service: payment
+    project: roboshop
+spec:
+  selector:
+    tier: app
+    service: payment
+    project: roboshop
+  ports:
+  - name: payement-port
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+
+
+

@@ -1,0 +1,49 @@
+kind: Deployement
+apiVersion: apps/v1
+metedata:
+  name: rating
+  labels:
+    service: rating
+    tier: app
+    project: roboshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: rating
+      tier: app
+      project: roboshop
+  template:
+    metedata:
+      labels:
+        service: rating
+        tier: app
+        project: roboshop
+    spec:
+      containers:
+      - image: saivinatlt/ratings:v1
+        name: ratings
+        imgePullPolicy: Always
+---
+kind: Service
+apiVersion: v1
+metedata:
+  name: ratings
+  labels:
+    service: rating
+    tier: app
+    project: roboshop
+spec:
+  selector:
+    service: rating
+    tier: app
+    project: roboshop
+  ports:
+  - name: ratings-port
+    protocol: TCP
+    port: 80
+    targetPort: 80
+
+
+
+

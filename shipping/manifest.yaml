@@ -1,0 +1,43 @@
+apiVersion: appsv1
+kind: Deployement
+metedata:
+  name: shipping
+  labels:
+    service: shipping
+    tier: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:  
+      service: shipping
+      tier: app
+  template:
+    metedata:
+      labels:
+        service: shipping
+        tier: app
+    spec:
+      containers:
+      - image: saivinaylt/shipping:v1
+        imagePullPolicy: Always
+        name: shipping
+---
+kind: Service
+apiVersion: v1
+metedata: 
+  name: shipping
+  labels:
+    service: shipping
+    tier: app
+spec:
+  selector:
+    service: shipping
+    tier: app
+  ports:
+  - name: shipping-port
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+    
+
+

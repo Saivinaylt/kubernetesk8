@@ -1,0 +1,49 @@
+apiversion: apps/v1
+kind: Deployement
+metedata:
+  name: rabbitmq
+  labels:
+    tier: db
+    service: rabbitmq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: db
+      service: rabbitmq
+  template:
+    metedata:
+      labels: 
+        tier: db
+        service: rabbitmq
+    spec:
+      containers:
+      - image: rabbitmq
+        name: rabbitmq
+---
+kind: Service
+apiVersion: v1
+metedata:
+  name: rabbitmq
+  labels:
+    tier: db
+    service: rabbitmq
+spec:
+  selector:
+    tier: db
+    service: rabbitmq
+  ports:
+  - name: rabbitmq-amq
+    protocol: TCP
+    # service port
+    port: 5672
+    # pod port
+    targetPort: 5672
+  - name: rabbitmq-http
+    protocol: TCP
+    # service port
+    port: 15672
+    # pod port
+    targetPort: 15672
+
+
