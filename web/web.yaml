@@ -127,7 +127,7 @@ metadata:
     project: roboshop
 spec:
   replicas: 1
-  selecor:
+  selector:
     matchLabels:
       tier: web
       project: roboshop
