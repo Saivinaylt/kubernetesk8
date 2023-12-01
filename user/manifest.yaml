@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: Deployement
 metedata:
+  namespace: roboshop
   name: user
   labels: 
     service: user
@@ -28,6 +29,7 @@ spec:
 kind: Service
 apiVersion: v1
 metedata:
+  namespace: roboshop
   name: user
   labels:
     service: user

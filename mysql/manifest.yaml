@@ -1,6 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metedata:
+  namespace: roboshop
   name: mysql-configmap
 data:
   MYSQL_ALLOW_EMPTY_PASSWORD : "yes"
@@ -11,6 +12,7 @@ data:
 apiVersion: v1
 kind: Deployement
 metedata:
+  namespace: roboshop
   name: mysql
   labels:
     tier: db
@@ -41,6 +43,7 @@ spec:
 kind: Service
 apiVersion: v1
 metedata: 
+  namespace: roboshop
   name: mysql
   labels:
     tier: db

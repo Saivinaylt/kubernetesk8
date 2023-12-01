@@ -1,6 +1,7 @@
 kind: Deployement
 apiVersion: apps/v1
 metedata:
+  namespace: roboshop
   name: rating
   labels:
     service: rating
@@ -28,6 +29,7 @@ spec:
 kind: Service
 apiVersion: v1
 metedata:
+  namespace: roboshop
   name: ratings
   labels:
     service: rating

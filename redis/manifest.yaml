@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployement
 metedata:
+  namespace: roboshop
   name: redis
   labels: 
     tier: db
@@ -16,3 +17,25 @@ spec:
       labels:
         tier: db
         service: redis
+    spec:
+      containers:
+      - image: redis
+        name: redis
+---
+kind: Service
+apiVersion: v1
+metedata:
+  namespace: roboshop
+  name: radis
+  labels:
+    tier: db
+    service: redis
+spec:
+  selector:
+    tier: db
+    service: redis
+  ports:
+  - name: redis-port
+    protocol: TCP
+    port: 6379
+    targetPort: 6379

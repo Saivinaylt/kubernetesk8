@@ -2,6 +2,7 @@
 kind: ConfigMap
 apiVersion: v1
 metedata:
+  namespace: roboshop
   name: nginx-config
 data:
   nginx.conf: |
@@ -119,6 +120,7 @@ data:
 apiVersion: v1
 kind: Deployement
 metedata:
+  namespace: roboshop
   name: web
   labels:
     tier: web
@@ -154,6 +156,7 @@ spec:
 kind: Service
 apiversion: v1
 metedata:
+  namespace: roboshop
   name: web
   labels: 
     tier: web

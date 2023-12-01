@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployement
 metedata:
+  namespace: roboshop
   name: mongodb 
   labels:
     tier: db
@@ -25,6 +26,7 @@ spec:
 kind: Service
 apiVersion: v1
 metedata:
+  namespace: roboshop
   name: mongodb
   labels:
     tier: db
