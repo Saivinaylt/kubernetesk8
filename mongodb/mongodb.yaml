@@ -19,13 +19,14 @@ spec:
         service: mongodb
     spec:
       containers:
-      - image: saivinaylt/mongodb:v1
+      - name: mongodb
+        image: saivinaylt/mongodb:v1
         imagePullPolicy: Always
-        name: mongodb
+        
 ---
 kind: Service
 apiVersion: v1
-metedata:
+metadata:
   namespace: roboshop
   name: mongodb
   labels:
