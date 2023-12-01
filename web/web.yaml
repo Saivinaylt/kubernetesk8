@@ -147,7 +147,7 @@ spec:
           subPath: nginx.conf
       volumes:
       - name: nginx-config
-        configMap:
+        configMapRef:
           name: nginxconfig
           items:
             key: nginx.conf
