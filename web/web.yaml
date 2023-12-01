@@ -147,10 +147,10 @@ spec:
           subPath: nginx.conf
       volumes:
       - name: nginx-config
-        configMapRef:
+        configMap:
           name: nginxconfig
           items:
-            key: nginx.conf
+          - key: nginx.conf
             path: nginx.conf
 ---
 kind: Service
