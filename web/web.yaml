@@ -137,7 +137,7 @@ spec:
         tier: web
         project: roboshop
     spec:
-      cotainers:
+      containers:
       - image: saivinaylt/web:v1
         imagePullPolicy: Always
         name: web
