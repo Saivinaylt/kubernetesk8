@@ -1,4 +1,4 @@
-kind: Namespace
+kind: NameSpace
 apiVersion: v1
 metedata:
   name: roboshop
