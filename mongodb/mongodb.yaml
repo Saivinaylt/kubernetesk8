@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployement
-metedata:
+metadata:
   namespace: roboshop
   name: mongodb 
   labels:
