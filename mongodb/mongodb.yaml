@@ -13,7 +13,7 @@ spec:
       tier: db
       service: mongodb
   template:
-    metedata:
+    metadata:
       labels:
         tier: db
         service: mongodb
