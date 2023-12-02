@@ -1,6 +1,6 @@
 apiVersion: apps/v1
-kind: Deployement
-metedata:
+kind: Deployment
+metadata:
   namespace: roboshop
   name: redis
   labels: 
@@ -13,7 +13,7 @@ spec:
       tier: db
       service: redis
   template:
-    metedata:
+    metadata:
       labels:
         tier: db
         service: redis
@@ -24,7 +24,7 @@ spec:
 ---
 kind: Service
 apiVersion: v1
-metedata:
+metadata:
   namespace: roboshop
   name: radis
   labels:
