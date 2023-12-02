@@ -26,7 +26,7 @@ kind: Service
 apiVersion: v1
 metadata:
   namespace: roboshop
-  name: radis
+  name: redis
   labels:
     tier: db
     service: redis
