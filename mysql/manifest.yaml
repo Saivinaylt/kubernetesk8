@@ -1,6 +1,6 @@
 kind: ConfigMap
 apiVersion: v1
-metedata:
+metadata:
   namespace: roboshop
   name: mysql-configmap
 data:
@@ -10,8 +10,8 @@ data:
   MYSQL_PASSWORD : secret
 ---
 apiVersion: v1
-kind: Deployement
-metedata:
+kind: Deployment
+metadata:
   namespace: roboshop
   name: mysql
   labels:
@@ -26,7 +26,7 @@ spec:
       service: mysql
       project: roboshop
   template:
-    metedata:
+    metadata:
       labels: 
         tier: db
         service: mysql
@@ -42,7 +42,7 @@ spec:
 ---
 kind: Service
 apiVersion: v1
-metedata: 
+metadata: 
   namespace: roboshop
   name: mysql
   labels:
