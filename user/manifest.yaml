@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: roboshop
@@ -36,7 +36,7 @@ metadata:
     tier: app
     project: roboshop
 spec:
-  slector:
+  selector:
     service: user
     tier: app
     project: roboshop
