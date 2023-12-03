@@ -2,9 +2,9 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   namespace: roboshop
-  name: rating
+  name: ratings
   labels:
-    service: rating
+    service: ratings
     tier: app
     project: roboshop
 spec:
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       labels:
-        service: rating
+        service: ratings
         tier: app
         project: roboshop
     spec:
@@ -32,12 +32,12 @@ metadata:
   namespace: roboshop
   name: ratings
   labels:
-    service: rating
+    service: ratings
     tier: app
     project: roboshop
 spec:
   selector:
-    service: rating
+    service: ratings
     tier: app
     project: roboshop
   ports:
