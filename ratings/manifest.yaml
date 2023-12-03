@@ -1,6 +1,6 @@
-kind: Deployement
+kind: Deployment
 apiVersion: apps/v1
-metedata:
+metadata:
   namespace: roboshop
   name: rating
   labels:
@@ -11,11 +11,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      service: rating
+      service: ratings
       tier: app
       project: roboshop
   template:
-    metedata:
+    metadata:
       labels:
         service: rating
         tier: app
@@ -28,7 +28,7 @@ spec:
 ---
 kind: Service
 apiVersion: v1
-metedata:
+metadata:
   namespace: roboshop
   name: ratings
   labels:
