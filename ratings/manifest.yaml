@@ -24,7 +24,7 @@ spec:
       containers:
       - image: saivinatlt/ratings:v1
         name: ratings
-        imgePullPolicy: Always
+        imagePullPolicy: Always
 ---
 kind: Service
 apiVersion: v1
